@@ -18,7 +18,7 @@ input.question("Video URL to summarize: ", (url) => {
     return;
   }
 
-  input.question("Enter your preferred language (e.g., en, pt, es): ", async (lang) => {
+  input.question("Enter your preferred language (en, pt-br, es): ", async (lang) => {
     await fetchTranscript(url, lang);
     input.close();
   });
