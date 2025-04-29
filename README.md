@@ -15,7 +15,7 @@ You can utilize this simple CLI program to get the summary of any YouTube video.
 ## 📦 Setup
 
 ```bash
-git clone https://github.com/your-user/youtube-video-summarizer
+git clone https://github.com/LucwsH/youtube-video-summarizer
 cd youtube-video-summarizer
 npm install
 ```
