@@ -18,7 +18,7 @@ input.question("Video URL to summarize: ", (url) => {
     return;
   }
 
-  input.question("Enter your preferred language (en, pt-br, es): ", async (lang) => {
+  input.question("Enter your preferred language (e.g., en, pt, es): ", async (lang) => {
     await fetchTranscript(url, lang);
     input.close();
   });
@@ -36,6 +36,8 @@ async function fetchTranscript(videoUrl, lang) {
     const transcriptText = transcript.map((entry) => entry.text).join(" ");
 
     const summary = await summarizeTranscript(transcriptText, lang);
+
+    fs.mkdirSync("src/summaries", { recursive: true });
 
     const path = `src/summaries/summary-${uuid}.txt`;
     fs.writeFileSync(path, summary);
